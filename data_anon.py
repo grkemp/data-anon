@@ -1,4 +1,4 @@
- #!/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 '''
@@ -13,5 +13,12 @@ import pandas as pd
 import numpy as np
 
 def read_data():
+    df = pd.read_excel('/Users/grantrodgerskemp/Box/corpus_paper/data/data_coding/inter-rater_reliability/nullovert123-OMJ-Reliability-grk.xlsx', sheet_name='data')
+    df = df.loc[:, ['environment','tier']]
+    df[df.tier != '%%svd:']
+
+    print(df.head())
 
     return
+
+read_data()

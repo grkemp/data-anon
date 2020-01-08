@@ -12,6 +12,9 @@
 import pandas as pd
 import numpy as np
 
+def main():
+    read_data()
+
 def read_data():
     '''Function reads in hard-coded filepath, need to change to use some method 
     of os. Reduces dataframe to the target environment column and the tier 
@@ -25,11 +28,16 @@ def read_data():
 
     rm_svd = df[df['tier'] == '%svd:'].index
     df.drop(rm_svd, inplace=True)
+    df.reset_index()
     
     df = df.loc[:, ['environment']]
 
     print(df.head())
 
-    return
+    return df
 
-read_data()
+# def split_data(dataframe):
+#     for i in dataframe:
+        
+
+main()
